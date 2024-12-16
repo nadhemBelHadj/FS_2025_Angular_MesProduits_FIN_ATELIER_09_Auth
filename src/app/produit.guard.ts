@@ -6,6 +6,9 @@ export const produitGuard: CanActivateFn = (route, state) => {
     const authService = inject(AuthService);
     const router = inject(Router);
 
+    authService.loadToken();
+    authService.decodeJWT();
+
     if (authService.isAdmin())
       return true;
     else {

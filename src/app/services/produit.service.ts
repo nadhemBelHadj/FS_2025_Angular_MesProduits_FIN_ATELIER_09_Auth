@@ -26,10 +26,10 @@ export class ProduitService {
               private authService : AuthService ) {}
 
   listeProduit(): Observable<Produit[]> {
-   /*  let jwt = this.authService.getToken();
+    let jwt = this.authService.getToken();
     jwt = "Bearer "+jwt;
-    let httpHeaders = new HttpHeaders({"Authorization":jwt}) */
-  return this.http.get<Produit[]>(this.apiURL+"/all");
+    let httpHeaders = new HttpHeaders({"Authorization":jwt}) 
+  return this.http.get<Produit[]>(this.apiURL+"/all",{headers:httpHeaders});
 
   }
 
